@@ -79,7 +79,11 @@ public class MainMenu {
                                     System.out.println("What room number would you like to reserve?");
                                     String roomNumber = scanner.nextLine();
 
-                                    hotelResource.bookARoom(email, hotelResource.getRoom(roomNumber), checkInDate, checkOutDate).toString();
+                                    try {
+                                        hotelResource.bookARoom(email, hotelResource.getRoom(roomNumber), checkInDate, checkOutDate).toString();
+                                    } catch (Exception ex) {
+                                        System.out.println("Invalid Email");
+                                    }
                                 }
                             }
 
