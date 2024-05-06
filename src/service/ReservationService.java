@@ -25,7 +25,14 @@ public class ReservationService {
         return roomSet;
     }
     public void addRoom(IRoom room) {
+        for (IRoom item : roomSet) {
+            if (item.equals(room)) {
+                System.out.println("duplicated room");
+                return;
+            }
+        }
         roomSet.add(room);
+
 //        recommendSet.add(room);
 //        System.out.println("Adding complete\n" + room.toString()) ;
     }
